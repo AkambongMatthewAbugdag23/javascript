@@ -1,0 +1,19 @@
+function StringChallenge(str) {
+    let result = '';
+
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (/[a-zA-Z]/.test(char)) {
+            const position = char.toLowerCase().charCodeAt(0) - 96;
+            result += position;
+        } else {
+            result += char;
+        }
+    }
+
+    return result;
+}
+
+// Test cases
+console.log(StringChallenge("hello 45")); // Output: "85121215 45"
+console.log(StringChallenge("jaj-a")); // Output: "10110-1"
