@@ -1,0 +1,25 @@
+function StringChallenge(num) {
+    let result = '';
+
+    for (let i = 1; i <= num; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            result += 'FizzBuzz';
+        } else if (i % 3 === 0) {
+            result += 'Fizz';
+        } else if (i % 5 === 0) {
+            result += 'Buzz';
+        } else {
+            result += i;
+        }
+
+        if (i !== num) {
+            result += ' ';
+        }
+    }
+
+    return result;
+}
+
+// Test cases
+console.log(StringChallenge(3)); // Output: "1 2 Fizz"
+console.log(StringChallenge(8)); // Output: "1 2 Fizz 4 Buzz Fizz 7 8"
