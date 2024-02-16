@@ -1,0 +1,26 @@
+function ArrayChallenge(arr) {
+    let duplicates = 0;
+    const countMap = {};
+
+    // Count occurrences of each element
+    arr.forEach(num => {
+        if (countMap[num]) {
+            countMap[num]++;
+        } else {
+            countMap[num] = 1;
+        }
+    });
+
+    // Count duplicates
+    for (const num in countMap) {
+        if (countMap[num] > 1) {
+            duplicates += countMap[num] - 1;
+        }
+    }
+
+    return duplicates;
+}
+
+// Test cases
+console.log(ArrayChallenge([0,-2,-2,5,5,5])); // Output: 3
+console.log(ArrayChallenge([100,2,101,4])); // Output: 0
